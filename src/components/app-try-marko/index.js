@@ -5,7 +5,8 @@ var compilerAsyncValue = null;
 
 var removeClass = require('dom-classes').remove;
 var addClass = require('dom-classes').add;
-var markoPrettyprint = require('marko-prettyprint');
+var markoPrettyprint = require('marko-prettyprint/prettyPrintSource');
+var markoCompiler = require('marko/compiler');
 
 function loadCompiler(callback) {
     if (!compilerAsyncValue) {
@@ -116,7 +117,11 @@ module.exports = require('marko-widgets').defineComponent({
         var sampleSyntax = options.syntax;
 
         if (sampleSyntax !== this.syntax) {
-            template = markoPrettyprint(template, { syntax: this.syntax, filename: 'template.marko' });
+            template = markoPrettyprint(template, {
+                syntax: this.syntax,
+                filename: 'template.marko',
+                markoCompiler: markoCompiler
+            });
         }
 
         this.getWidget('outputEditor').setAutoFormat(autoFormat);
@@ -151,7 +156,11 @@ module.exports = require('marko-widgets').defineComponent({
         }
 
         var templateSrc = this.getWidget('templateEditor').getValue();
-        templateSrc = markoPrettyprint(templateSrc, { syntax: this.syntax, filename: 'template.marko' });
+        templateSrc = markoPrettyprint(templateSrc, {
+            syntax: this.syntax,
+            filename: 'template.marko',
+            markoCompiler: markoCompiler
+        });
 
         this.getWidget('templateEditor').setValue(templateSrc);
     },

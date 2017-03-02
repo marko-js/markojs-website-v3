@@ -3,7 +3,7 @@
 const exec = require('child_process').execSync;
 const gitUrl = `git@github.com:marko-js/markojs-website-v3.git`;
 const gitBranch = 'gh-pages';
-const buildDir = __dirname + '/dist';
+const buildDir = __dirname + '/build';
 const publishDir = buildDir + '/__publish';
 
 exec('markoc . --clean');

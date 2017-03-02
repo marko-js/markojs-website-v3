@@ -42,6 +42,7 @@ Site.prototype = {
         var feed = new Feed({
                 title: this.title,
                 description: this.description,
+                id: this.url,
                 link: this.url,
                 image: this.feedImage,
                 copyright: this.copyright,

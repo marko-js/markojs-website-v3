@@ -48,6 +48,13 @@ lasso.configure({
         }
     ],
 
+    require: {
+        builtins: {
+            'fs': require.resolve('./src/browser-shims/fs'),
+            'module': require.resolve('./src/browser-shims/module')
+        }
+    },
+
     // Directory where generated JS and CSS bundles are written
     outputDir: path.join(__dirname, 'build/static'),
 

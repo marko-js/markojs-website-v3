@@ -1,7 +1,8 @@
 {
     "predef": [
         "document",
-        "fetch"
+        "fetch",
+        "window"
     ],
     "node" : true,
     "esnext": true,
