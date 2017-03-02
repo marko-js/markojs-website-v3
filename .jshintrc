@@ -1,16 +1,10 @@
 {
     "predef": [
-        "Promise"
+        "document",
+        "fetch"
     ],
-
-    "globals": {
-        "define": true,
-        "require": true
-    },
-
     "node" : true,
-    "es5" : false,
-    "browser" : true,
+    "esnext": true,
     "boss" : false,
     "curly": false,
     "debug": false,
