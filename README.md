@@ -1,6 +1,8 @@
 markojs.com source code
 =======================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/marko-js/markojs-website-v3.svg)](https://greenkeeper.io/)
+
 # Running locally
 
 ```
